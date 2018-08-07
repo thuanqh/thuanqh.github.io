@@ -7,7 +7,7 @@
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -b master -d dist"
   },
   "author": "Jason Quach",
   "license": "MIT",
