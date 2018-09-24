@@ -176,6 +176,8 @@ main {
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
+    .about-info .bio p {
+      text-align: left; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
