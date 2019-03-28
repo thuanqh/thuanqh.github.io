@@ -8,7 +8,7 @@
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -b master -d dist"
   },
-  "author": "Brad Traversy",
+  "author": "Jason Quach",
   "license": "MIT",
   "dependencies": {
     "gh-pages": "^2.0.1",
