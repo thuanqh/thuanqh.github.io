@@ -1,4 +1,9 @@
 import React from "react";
+import { Box, Heading } from "agonkit";
 import "../assets/scss/main.scss";
 
-export default () => <h1>Hello Jason Quach!</h1>;
+export default () => (
+  <Box>
+    <Heading>Hello Jason Quach!</Heading>
+  </Box>
+);
