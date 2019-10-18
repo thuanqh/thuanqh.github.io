@@ -6,14 +6,16 @@ export default props => (
     sx={{
       display: "flex",
       flexDirection: "column",
-      minHeight: "100vh"
+      minHeight: "100vh",
+      variant: "layout.root"
     }}
   >
     <header
       sx={{
         width: "100%",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        variant: "layout.header"
       }}
     >
       Header content
