@@ -159,6 +159,14 @@ export default {
       px: 3,
       py: 2,
       ml: 3
+    },
+    primary: {
+      color: `background`,
+      bg: `primary`
+    },
+    secondary: {
+      color: `background`,
+      bg: `secondary`
     }
   },
   texts: {

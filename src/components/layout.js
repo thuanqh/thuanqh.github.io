@@ -1,24 +1,24 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import Toggle from "./toggle";
 
 export default props => (
   <div
     sx={{
       display: "flex",
       flexDirection: "column",
-      minHeight: "100vh",
-      variant: "layout.root"
+      minHeight: "100vh"
     }}
   >
     <header
       sx={{
         width: "100%",
         display: "flex",
-        alignItems: "center",
-        variant: "layout.header"
+        alignItems: "center"
       }}
     >
       Header content
+      <Toggle />
     </header>
     <main
       sx={{
