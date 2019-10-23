@@ -1,9 +1,8 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
 import React from "react";
+import("../assets/scss/main.scss");
 
 export default () => (
-  <div sx={{ margin: 0, padding: 0 }}>
+  <div>
     <h1>Welcome to Jason Q</h1>
   </div>
 );
