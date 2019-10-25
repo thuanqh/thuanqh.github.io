@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Heading, Text } from "agonkit";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
 export default () => (
   <Layout>
@@ -15,7 +14,7 @@ export default () => (
       backgroundRepeat="no-repeat"
       position="relative"
     >
-      <Heading>Jason Quach</Heading>
+      <Heading m={0} fontWeight={400} fontSize={["2rem", "6rem"]}>Jason Quach</Heading>
       <Text>
         Software Craftsman, Creator, Author, Mentor, Angel Investor &
         Entrepreneur
