@@ -8,8 +8,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-mdx`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +29,8 @@ module.exports = {
         path: `${__dirname}/content`
       }
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
