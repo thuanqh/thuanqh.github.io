@@ -7,8 +7,23 @@ const GlobalStyles = createGlobalStyle`
 
   html,
   body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+    background: #333;
+    color: #fff;
+  }
+
+  h1, h2, h3 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
   }
 `;
 

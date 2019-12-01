@@ -18,13 +18,20 @@ export default () => {
           backgroundAttachment: "fixed"
         })}
       >
-        <Heading as="h1" mt={[5]} fontWeight={400} fontSize={["5rem", "6rem"]}>
-          Jason Quach
-        </Heading>
-        <Heading as="h2" fontWeight={400} m={0}>
-          Software Craftsman, Creator, Author, Mentor, Angel Investor &
-          Entrepreneur
-        </Heading>
+        <Box p="4rem">
+          <Heading
+            as="h1"
+            mt="20vh"
+            fontWeight={400}
+            fontSize={["5rem", "6rem"]}
+          >
+            Jason Quach
+          </Heading>
+          <Heading as="h2" fontWeight={400} m={0}>
+            Software Craftsman, Creator, Author, Mentor, Angel Investor &
+            Entrepreneur
+          </Heading>
+        </Box>
       </Box>
     </Layout>
   );
