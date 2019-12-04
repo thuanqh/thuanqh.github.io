@@ -24,10 +24,20 @@ export default () => {
             mt="20vh"
             fontWeight={400}
             fontSize={["5rem", "6rem"]}
+            lineHeight={[0, 3]}
+            textAlign={["center", "left"]}
           >
             Jason Quach
           </Heading>
-          <Heading as="h2" fontWeight={400} m={0}>
+          <Heading
+            as="h2"
+            fontWeight={400}
+            textAlign={["center", "left"]}
+            fontSize="1.5em"
+            mb="2rem"
+            px="0.2rem"
+            py="1rem"
+          >
             Software Craftsman, Creator, Author, Mentor, Angel Investor &
             Entrepreneur
           </Heading>
