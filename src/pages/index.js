@@ -7,6 +7,7 @@ export default () => {
   return (
     <Layout>
       <Box
+        as="header"
         color="white"
         bg="grey.900"
         height="100vh"
@@ -18,21 +19,26 @@ export default () => {
           backgroundAttachment: "fixed"
         })}
       >
-        <Box p="4rem">
+        <Box
+          p={["2rem", "4rem"]}
+          minHeight="calc(100vh - 60px)"
+          alignItems={["center"]}
+          textAlign={["center"]}
+        >
           <Heading
             as="h1"
-            mt="20vh"
+            mt={[8, "20vh", "20vh"]}
             fontWeight={400}
             fontSize={["5rem", "6rem"]}
             lineHeight={[0, 3]}
-            textAlign={["center", "left"]}
+            textAlign={["center", "center", "left"]}
           >
             Jason Quach
           </Heading>
           <Heading
             as="h2"
             fontWeight={400}
-            textAlign={["center", "left"]}
+            textAlign={["center", "center", "left"]}
             fontSize="1.5em"
             mb="2rem"
             px="0.2rem"

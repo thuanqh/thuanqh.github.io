@@ -15,16 +15,6 @@ const GlobalStyles = createGlobalStyle`
     background: #333;
     color: #fff;
   }
-
-  h1, h2, h3 {
-    margin: 0;
-    font-weight: 400;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
 `;
 
 export default GlobalStyles;

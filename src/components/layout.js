@@ -6,7 +6,7 @@ import { Box, theme } from "agonkit";
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <Box as="main">{children}</Box>
+    <Box>{children}</Box>
   </ThemeProvider>
 );
 
