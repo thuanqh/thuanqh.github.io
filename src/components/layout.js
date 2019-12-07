@@ -1,11 +1,10 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import GlobalStyles from "../utils/global-styles";
-import { Box, theme } from "agonkit";
+import { ThemeProvider } from "emotion-theming";
+import { Box } from "rebass";
+import theme from "../utils/theme";
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <GlobalStyles />
     <Box>{children}</Box>
   </ThemeProvider>
 );
