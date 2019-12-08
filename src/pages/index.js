@@ -1,17 +1,19 @@
 import React from "react";
+import { Box, Heading } from "@theme-ui/components";
+import Layout from "../components/layout";
 
 export default () => {
   return (
-    <>
-      <main>
-        <h1>
+    <Layout>
+      <Box as="section">
+        <Heading as="h1">
           Jason <span>Quach</span>
-        </h1>
-        <h2>
+        </Heading>
+        <Heading>
           Software Craftsman, Creator, Author, Mentor, Angle Investor &
           Entrepreneur
-        </h2>
-      </main>
-    </>
+        </Heading>
+      </Box>
+    </Layout>
   );
 };
