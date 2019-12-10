@@ -1,7 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Jason Portfolio`,
-    description: `Jason Portfolio`,
+    title: `Jason Quach - In giving, I learn how to receive.`,
+    description: `
+      Jason Quach (Huu Thuan) is a software craftsman, 
+      inventor, author, mentor, angle investor and entrepreneur, 
+      business and marketing strategist, innovation consultant and coach.
+    `,
     author: `jason@lungvang.com`
   },
   plugins: [

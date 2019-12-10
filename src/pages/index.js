@@ -25,7 +25,7 @@ export default () => {
       <Parallax pages={6}>
         <Hero offset={0} />
         <Services offset={1} />
-        <About offset={3.5} />
+        <About offset={4} />
         <Contact offset={5} />
       </Parallax>
     </Layout>

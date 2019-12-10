@@ -136,7 +136,10 @@ export default {
       mb: 4,
       textShadow: `rgba(255, 255, 255, 0.15) 0px 5px 35px`,
       letterSpacing: `wide`,
-      color: `heading`
+      color: `heading`,
+      span: {
+        color: `#6b8e23`
+      }
     },
     h2: {
       ...tailwind.styles.h2,
