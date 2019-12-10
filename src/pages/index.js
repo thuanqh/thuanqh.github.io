@@ -12,7 +12,15 @@ export default () => {
     <Layout>
       <SEO
         title="Jason's Portfolio"
-        keywords={[`lungvang`, `jason`, `quach`, `huu`, `thuan`]}
+        keywords={[
+          `jason`,
+          `quach`,
+          `huu`,
+          `thuan`,
+          `portfolio`,
+          `blog`,
+          `tutorial`
+        ]}
       />
       <Parallax pages={6}>
         <Hero offset={0} />
