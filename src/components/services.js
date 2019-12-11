@@ -14,9 +14,9 @@ const Services = ({ offset }) => (
       sx={{ clipPath: `polygon(0 15%, 100% 25%, 100% 85%, 0 75%)` }}
       speed={-0.2}
       offset={1.1}
-      factor={2}
+      factor={3}
     />
-    <Content speed={0.4} offset={offset + 0.2} factor={2}>
+    <Content speed={0.4} offset={offset + 0.5} factor={3}>
       <Inner>
         <div
           sx={{
@@ -30,7 +30,7 @@ const Services = ({ offset }) => (
         </div>
       </Inner>
     </Content>
-    <Divider speed={0.1} offset={offset} factor={2}>
+    <Divider speed={0.1} offset={offset} factor={3}>
       <UpDown>
         <SVG icon="box" width={6} color="icon_brightest" left="85%" top="75%" />
         <SVG icon="upDown" width={8} color="icon_teal" left="70%" top="20%" />
