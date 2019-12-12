@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Jason Quach - In giving, I learn how to receive.`,
     description: `
-      Jason Quach (Huu Thuan) is a software craftsman, 
-      inventor, author, mentor, angle investor and entrepreneur, 
+      Jason Quach (Huu Thuan) is a software craftsman,
+      inventor, author, mentor, angle investor and entrepreneur,
       business and marketing strategist, innovation consultant and coach.
     `,
     author: `jason@lungvang.com`
@@ -17,13 +17,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/img`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts`
       }
     },
     `gatsby-plugin-sharp`,
