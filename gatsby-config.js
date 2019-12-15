@@ -9,6 +9,20 @@ module.exports = {
     author: `jason@lungvang.com`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-2759478-30",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        pageTransitionDelay: 0,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "thuanqh.github.io"
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-mdx`,
