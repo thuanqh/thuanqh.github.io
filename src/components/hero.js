@@ -144,6 +144,16 @@ const Hero = ({ offset }) => (
     <Content sx={{ variant: `text.bigger` }} speed={0.4} offset={offset}>
       <Inner>
         <Intro />
+        <button
+          sx={{
+            variant: `buttons.toggle`,
+            fontWeight: `semibold`,
+            mx: `auto`,
+            mb: 3
+          }}
+        >
+          Start A Project
+        </button>
       </Inner>
     </Content>
   </div>
