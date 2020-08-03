@@ -1,10 +1,10 @@
+import { merge } from "theme-ui";
 import { tailwind } from "@theme-ui/presets";
-export default {
-  ...tailwind,
+
+const theme = merge(tailwind, {
   initialColorMode: `dark`,
   useCustomProperties: true,
   colors: {
-    ...tailwind.colors,
     primary: tailwind.colors.orange[4],
     secondary: tailwind.colors.indigo[6],
     text: tailwind.colors.gray[3],
@@ -32,9 +32,9 @@ export default {
         textMuted: tailwind.colors.gray[6],
         icon_brightest: tailwind.colors.gray[2],
         icon_darker: tailwind.colors.gray[4],
-        icon_darkest: tailwind.colors.gray[6]
-      }
-    }
+        icon_darkest: tailwind.colors.gray[6],
+      },
+    },
   },
   buttons: {
     toggle: {
@@ -45,19 +45,18 @@ export default {
       alignSelf: `center`,
       px: 3,
       py: 2,
-      ml: 3
-    }
+      ml: 3,
+    },
   },
   texts: {
     bigger: {
       p: {
-        fontSize: [2, 3, 4]
-      }
-    }
+        fontSize: [2, 3, 4],
+      },
+    },
   },
   breakpoints: [`400px`, `600px`, `900px`, `1200px`, `1600px`],
   sizes: {
-    ...tailwind.sizes,
     "1/2": `50%`,
     "1/3": `33.333333%`,
     "2/3": `66.666667%`,
@@ -85,33 +84,31 @@ export default {
     "10/12": `83.333333%`,
     "11/12": `91.666667%`,
     full: `100%`,
-    screen: `100vw`
+    screen: `100vw`,
   },
   styles: {
-    ...tailwind.styles,
     root: {
-      ...tailwind.styles.root,
       color: `text`,
       backgroundColor: `background`,
       a: {
         transition: `all 0.3s ease-in-out`,
         "&:hover": {
           color: `primary`,
-          textDecoration: `none`
-        }
-      }
+          textDecoration: `none`,
+        },
+      },
     },
-    Footer: {
+    footer: {
       textAlign: `center`,
       display: `block`,
       position: `absolute`,
       bottom: 0,
       color: `textMuted`,
       px: [2, 3],
-      py: [3, 4]
+      py: [3, 4],
     },
     Container: {
-      maxWidth: `5xl`
+      maxWidth: `5xl`,
     },
     p: {
       fontSize: [1, 2],
@@ -119,18 +116,17 @@ export default {
       lineHeight: `body`,
       "--baseline-multiplier": 0.179,
       "--x-height-multiplier": 0.35,
-      color: `text`
+      color: `text`,
     },
     blockquote: {
       marginLeft: 0,
       p: {
         fontSize: [2, 3],
         fontWeight: `medium`,
-        color: `heading`
-      }
+        color: `heading`,
+      },
     },
     h1: {
-      ...tailwind.styles.h1,
       fontSize: [6, 7, 8],
       mt: 2,
       mb: 4,
@@ -138,36 +134,33 @@ export default {
       letterSpacing: `wide`,
       color: `heading`,
       span: {
-        color: `#6b8e23`
-      }
+        color: `#6b8e23`,
+      },
     },
     h2: {
-      ...tailwind.styles.h2,
       fontSize: [4, 5, 6],
       mt: 2,
-      color: `heading`
+      color: `heading`,
     },
     h3: {
-      ...tailwind.styles.h3,
       fontSize: [3, 4, 5],
       mt: 3,
-      color: `heading`
+      color: `heading`,
     },
     h4: {
-      ...tailwind.styles.h4,
       fontSize: [2, 3, 4],
-      color: `heading`
+      color: `heading`,
     },
     h5: {
-      ...tailwind.styles.h5,
       fontSize: [1, 2, 3],
-      color: `heading`
+      color: `heading`,
     },
     h6: {
-      ...tailwind.styles.h6,
       fontSize: 1,
       mb: 2,
-      color: `heading`
-    }
-  }
-};
+      color: `heading`,
+    },
+  },
+});
+
+export default theme;

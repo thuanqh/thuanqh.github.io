@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { Footer as ThemeFooter, useColorMode, jsx } from "theme-ui";
+import { Box, useColorMode, jsx } from "theme-ui";
 
 const Footer = () => {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const toggleColorMode = e => {
+  const toggleColorMode = (e) => {
     setColorMode(isDark ? `light` : `dark`);
   };
 
   return (
-    <ThemeFooter>
+    <Box as="footer" variant="footer">
       <button
         sx={{
           variant: `buttons.toggle`,
           fontWeight: `semibold`,
           display: `block`,
           mx: `auto`,
-          mb: 3
+          mb: 3,
         }}
         onClick={toggleColorMode}
         type="button"
@@ -25,7 +25,7 @@ const Footer = () => {
         {isDark ? `Light` : `Dark`}
       </button>
       Copyright &copy; {new Date().getFullYear()}. All rights reserved.
-    </ThemeFooter>
+    </Box>
   );
 };
 
