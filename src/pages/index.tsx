@@ -1,4 +1,5 @@
 import React from "react";
+import { PageProps } from "gatsby";
 import { Parallax } from "react-spring/renderprops-addons";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -7,7 +8,7 @@ import About from "../components/about";
 import Services from "../components/services";
 import Contact from "../components/contact";
 
-export default () => {
+export default function IndexPage(props: PageProps) {
   return (
     <Layout>
       <SEO
@@ -19,7 +20,7 @@ export default () => {
           `thuan`,
           `portfolio`,
           `blog`,
-          `tutorial`
+          `tutorial`,
         ]}
       />
       <Parallax pages={6}>
@@ -30,4 +31,4 @@ export default () => {
       </Parallax>
     </Layout>
   );
-};
+}
