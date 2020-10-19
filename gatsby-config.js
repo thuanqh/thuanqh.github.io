@@ -6,7 +6,7 @@ module.exports = {
       inventor, author, mentor, angle investor and entrepreneur,
       business and marketing strategist, innovation consultant and coach.
     `,
-    author: `jason@lungvang.com`
+    author: `jason@lungvang.com`,
   },
   plugins: [
     {
@@ -20,8 +20,8 @@ module.exports = {
         pageTransitionDelay: 0,
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "thuanqh.github.io"
-      }
+        cookieDomain: "thuanqh.github.io",
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
@@ -30,8 +30,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets/img`
-      }
+        path: `${__dirname}/src/assets/img`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts/`,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -45,9 +52,9 @@ module.exports = {
         background_color: `#333`,
         theme_color: `#6b8e23`,
         display: `standalone`,
-        icon: `src/assets/img/lungvang-icon.png`
-      }
+        icon: `src/assets/img/lungvang-icon.png`,
+      },
     },
-    `gatsby-plugin-offline`
-  ]
+    `gatsby-plugin-offline`,
+  ],
 };
