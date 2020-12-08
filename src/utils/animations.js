@@ -1,4 +1,4 @@
-import { keyframes, css } from "@emotion/core";
+import { keyframes, css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const wave = keyframes`
@@ -49,6 +49,6 @@ export const UpDownWide = styled.div`
   bottom: 0;
 `;
 
-export const waveAnimation = length => css`
+export const waveAnimation = (length) => css`
   animation: ${wave} ${length} linear infinite alternate;
 `;
