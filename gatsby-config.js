@@ -7,6 +7,17 @@ module.exports = {
       business and marketing strategist, innovation consultant and coach.
     `,
     author: `jason@lungvang.com`,
+    siteUrl: `https://thuanqh.github.io`,
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/huuthuan`,
+      },
+      {
+        name: `GitHub`,
+        url: `https://github.com/thuanqh`,
+      },
+    ],
   },
   plugins: [
     {
@@ -25,24 +36,44 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
-    `gatsby-plugin-mdx`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/img`,
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1380,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
+        ],
+        remarkPlugins: [require(`remark-slug`)],
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts/`,
+        name: `content/assets`,
+        path: `content/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content/posts`,
+        path: `content/posts`,
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

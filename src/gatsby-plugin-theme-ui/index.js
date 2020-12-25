@@ -1,5 +1,6 @@
 import { merge } from "theme-ui";
 import { tailwind } from "@theme-ui/presets";
+import prism from "@theme-ui/prism/presets/theme-ui";
 
 const theme = merge(tailwind, {
   initialColorModeName: `dark`,
@@ -10,6 +11,8 @@ const theme = merge(tailwind, {
     text: tailwind.colors.gray[3],
     heading: tailwind.colors.white,
     background: `#141821`,
+    accent: `#639`,
+    gray: `#666`,
     divider: tailwind.colors.gray[8],
     textMuted: tailwind.colors.gray[5],
     icon_brightest: tailwind.colors.white,
@@ -28,6 +31,8 @@ const theme = merge(tailwind, {
         heading: tailwind.colors.black,
         primary: tailwind.colors.orange[7],
         background: tailwind.colors.gray[1],
+        accent: `#639`,
+        gray: `#666`,
         divider: tailwind.colors.gray[2],
         textMuted: tailwind.colors.gray[6],
         icon_brightest: tailwind.colors.gray[2],
@@ -65,6 +70,9 @@ const theme = merge(tailwind, {
           textDecoration: `none`,
         },
       },
+    },
+    code: {
+      ...prism,
     },
     p: {
       fontSize: [1, 2],
