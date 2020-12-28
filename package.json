@@ -8,7 +8,6 @@
     "clean": "rm -rf .cache node_modules public package-lock.json yarn.lock yarn-error.log",
     "start": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
-    "sass": "node-sass-chokidar -w /src/assets/scss/ -o dist/css/",
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "author": "Jason Quach",
@@ -53,7 +52,6 @@
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gh-pages": "^3.1.0",
-    "node-sass-chokidar": "^1.5.0"
+    "gh-pages": "^3.1.0"
   }
 }
