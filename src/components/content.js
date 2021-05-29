@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { ParallaxLayer } from "react-spring/renderprops-addons";
+import { ParallaxLayer } from "@react-spring/parallax";
 
 const Content = ({ speed, offset, children, className, factor }) => (
   <ParallaxLayer
@@ -11,7 +11,7 @@ const Content = ({ speed, offset, children, className, factor }) => (
       flexDirection: `column`,
       alignItems: `center`,
       justifyContent: `center`,
-      zIndex: 50
+      zIndex: 50,
     }}
     speed={speed}
     offset={offset}

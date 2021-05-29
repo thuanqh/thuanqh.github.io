@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { ParallaxLayer } from "react-spring/renderprops-addons";
+import { ParallaxLayer } from "@react-spring/parallax";
 
 const Divider = ({
   speed,
@@ -10,7 +10,7 @@ const Divider = ({
   fill,
   clipPath,
   children,
-  className
+  className,
 }) => (
   <ParallaxLayer
     sx={{
@@ -21,9 +21,9 @@ const Divider = ({
       backgroundColor: bg,
       "#contact-wave": {
         color: fill,
-        fill: `currentColor`
+        fill: `currentColor`,
       },
-      clipPath
+      clipPath,
     }}
     speed={speed}
     offset={offset}

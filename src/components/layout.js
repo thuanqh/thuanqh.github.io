@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { Global } from "@emotion/core";
-import { css, Styled, jsx } from "theme-ui";
+import { Global } from "@emotion/react";
+import { css, Themed, jsx } from "theme-ui";
 
 const Layout = ({ children }) => (
-  <Styled.root>
+  <Themed.root>
     <Global
       styles={css({
         "*": {
           boxSizing: `inherit`,
           "&:before": {
-            boxSizing: `inherit`
+            boxSizing: `inherit`,
           },
           "&:after": {
-            boxSizing: `inherit`
-          }
+            boxSizing: `inherit`,
+          },
         },
         html: {
-          fontSize: `18px`
+          fontSize: `18px`,
         },
         body: {
           margin: 0,
@@ -25,16 +25,16 @@ const Layout = ({ children }) => (
           boxSizing: `border-box`,
           textRendering: `optimizeLegibility`,
           WebkitFontSmoothing: `antialiased`,
-          MozOsxFontSmoothing: `grayscale`
+          MozOsxFontSmoothing: `grayscale`,
         },
         "::selection": {
           backgroundColor: `primary`,
-          color: `white`
-        }
+          color: `white`,
+        },
       })}
     />
     <main>{children}</main>
-  </Styled.root>
+  </Themed.root>
 );
 
 export default Layout;

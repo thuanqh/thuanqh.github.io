@@ -72,6 +72,7 @@ module.exports = {
         path: `content/posts`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

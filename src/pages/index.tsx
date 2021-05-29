@@ -1,6 +1,6 @@
 import React from "react";
 import { PageProps } from "gatsby";
-import { Parallax } from "react-spring/renderprops-addons";
+import { Parallax } from "@react-spring/parallax";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/hero";
