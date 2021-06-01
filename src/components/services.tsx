@@ -5,9 +5,10 @@ import Inner from "./inner";
 import Content from "./content";
 import SVG from "./svg";
 import { UpDown, UpDownWide } from "../utils/animations";
+// @ts-ignore
 import ListServices from "../sections/list-services.mdx";
 
-const Services = ({ offset }) => (
+const Services = ({ offset }: { offset: number }) => (
   <div>
     <Divider
       bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"

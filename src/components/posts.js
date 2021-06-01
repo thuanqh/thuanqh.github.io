@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./layout.js";
+import Layout from "./layout";
 import PostList from "./post-list";
 
 const Posts = ({ data }) => {

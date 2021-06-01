@@ -67,7 +67,19 @@ const icons = {
   }
 };
 
-const SVG = ({ stroke, color, width, icon, left, top, hiddenMobile }) => (
+type IconType = "triangle" | "circle" | "arrowUp" | "box" | "hexa" | "cross"
+
+type SVGProps = {
+  stroke?: boolean
+  color?: string | number | any
+  with: number
+  icon: IconType
+  left: string
+  top: string
+  hiddenMobile?: boolean
+}
+
+const SVG = ({ stroke = false, color = ``, width, icon, left, top, hiddenMobile = false }) => (
   <svg
     sx={{
       position: `absolute`,
@@ -86,8 +98,3 @@ const SVG = ({ stroke, color, width, icon, left, top, hiddenMobile }) => (
 );
 
 export default SVG;
-
-SVG.defaultProps = {
-  stroke: false,
-  hiddenMobile: false
-};

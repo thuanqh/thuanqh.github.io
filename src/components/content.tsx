@@ -2,7 +2,15 @@
 import { jsx } from "theme-ui";
 import { ParallaxLayer } from "@react-spring/parallax";
 
-const Content = ({ speed, offset, children, className, factor }) => (
+type ContentProps = {
+  speed: number
+  offset: number
+  children: React.ReactNode
+  className?: string
+  factor?: number
+}
+
+const Content = ({ speed, offset, children, className = ``, factor = 1 }) => (
   <ParallaxLayer
     className={className}
     sx={{
@@ -15,7 +23,7 @@ const Content = ({ speed, offset, children, className, factor }) => (
     }}
     speed={speed}
     offset={offset}
-    factor={factor || 1}
+    factor={factor}
   >
     {children}
   </ParallaxLayer>

@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const ServiceCard = ({ link, title, children, bg }) => (
+type ServiceCardProps = {
+  link: string
+  title: string
+  children: React.ReactNode
+  bg: string
+}
+
+const ServiceCard = ({ link, title, children, bg }: ServiceCardProps) => (
   <a
     href={link}
     target="_blank"

@@ -2,13 +2,13 @@ import { keyframes, css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const wave = keyframes`
-  0% {
+  \ 0% {
     d: path("M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z");
   }
-  50% {
+  \ 50% {
     d: path("M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z");
   }
-  100% {
+  \ 100% {
     d: path("M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z");
   }
 `;
@@ -49,6 +49,6 @@ export const UpDownWide = styled.div`
   bottom: 0;
 `;
 
-export const waveAnimation = (length) => css`
+export const waveAnimation = (length: string) => css`
   animation: ${wave} ${length} linear infinite alternate;
 `;

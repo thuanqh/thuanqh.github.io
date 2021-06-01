@@ -4,7 +4,7 @@ import { Box, useColorMode, jsx } from "theme-ui";
 const Footer = () => {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === `dark`;
-  const toggleColorMode = (e) => {
+  const toggleColorMode = (e: any) => {
     setColorMode(isDark ? `light` : `dark`);
   };
 

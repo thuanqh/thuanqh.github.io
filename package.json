@@ -47,6 +47,7 @@
     "theme-ui": "^0.9.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-emotion": "^11.0.0",
     "eslint": "^7.27.0",

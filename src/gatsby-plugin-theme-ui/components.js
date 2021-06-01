@@ -3,7 +3,7 @@ import { jsx } from "theme-ui";
 import Prism from "@theme-ui/prism";
 import ServiceCard from "../components/service-card";
 
-export default {
+const components = {
   pre: (props) => props.children,
   code: Prism,
   ServiceCard: ({ link, title, bg, children }) => (
@@ -12,3 +12,5 @@ export default {
     </ServiceCard>
   ),
 };
+
+export default components;

@@ -6,8 +6,9 @@ import Inner from "./inner";
 import Content from "./content";
 import SVG from "./svg";
 import { UpDown, UpDownWide, waveAnimation } from "../utils/animations";
-import ReachMe from "../sections/reach-me.mdx";
 import Footer from "./footer";
+// @ts-ignore
+import ReachMe from "../sections/reach-me.mdx";
 
 const InnerWave = styled.div`
   path {
@@ -15,7 +16,7 @@ const InnerWave = styled.div`
   }
 `;
 
-const Contact = ({ offset }) => (
+const Contact = ({ offset }: { offset: number }) => (
   <div>
     <Divider fill="divider" speed={0.2} offset={offset}>
       <div

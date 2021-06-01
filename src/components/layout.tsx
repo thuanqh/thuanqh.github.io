@@ -2,7 +2,12 @@
 import { Global } from "@emotion/react";
 import { css, Themed, jsx } from "theme-ui";
 
-const Layout = ({ children }) => (
+type LayoutProps = {
+  children: React.ReactNode
+  className?: string
+}
+
+const Layout = ({ children, className = `` }: LayoutProps) => (
   <Themed.root>
     <Global
       styles={css({

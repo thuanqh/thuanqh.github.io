@@ -5,9 +5,10 @@ import Inner from "./inner";
 import Content from "./content";
 import SVG from "./svg";
 import { UpDown, UpDownWide } from "../utils/animations";
+// @ts-ignore
 import Intro from "../sections/intro.mdx";
 
-const Hero = ({ offset }) => (
+const Hero = ({ offset }: { offset: number }) => (
   <div>
     <Divider speed={0.2} offset={offset}>
       <UpDown>

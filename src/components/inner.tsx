@@ -1,7 +1,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-const Inner = ({ className, children }) => (
+type InnerProps = {
+  className?: string
+  children: React.ReactNode
+}
+
+const Inner = ({ className = ``, children }: InnerProps) => (
   <div
     className={className}
     sx={{

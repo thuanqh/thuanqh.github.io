@@ -5,9 +5,10 @@ import Inner from "./inner";
 import Content from "./content";
 import SVG from "./svg";
 import { UpDown, UpDownWide } from "../utils/animations";
+// @ts-ignore
 import AboutMe from "../sections/about-me.mdx";
 
-const About = ({ offset }) => (
+const About = ({ offset }: { offset: number }) => (
   <div>
     <Divider
       bg="divider"
