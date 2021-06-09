@@ -13,15 +13,6 @@ export default function IndexPage(props: PageProps) {
     <Layout>
       <SEO
         title="Jason's Portfolio"
-        keywords={[
-          `jason`,
-          `quach`,
-          `huu`,
-          `thuan`,
-          `portfolio`,
-          `blog`,
-          `tutorial`,
-        ]}
       />
       <Parallax pages={6}>
         <Hero offset={0} />

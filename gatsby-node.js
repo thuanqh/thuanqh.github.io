@@ -24,26 +24,22 @@ exports.onPreBootstrap = ({ store }) => {
   });
 };
 
-const mdxResolverPassthrough = (fieldName) => async (
-  source,
-  args,
-  context,
-  info
-) => {
-  const type = info.schema.getType(`Mdx`);
-  const mdxNode = context.nodeModel.getNodeById({
-    id: source.parent,
-  });
-  const resolver = type.getFields()[fieldName].resolve;
-  const result = await resolver(mdxNode, args, context, {
-    fieldName,
-  });
-  return result;
-};
+const mdxResolverPassthrough =
+  (fieldName) => async (source, args, context, info) => {
+    const type = info.schema.getType(`Mdx`);
+    const mdxNode = context.nodeModel.getNodeById({
+      id: source.parent,
+    });
+    const resolver = type.getFields()[fieldName].resolve;
+    const result = await resolver(mdxNode, args, context, {
+      fieldName,
+    });
+    return result;
+  };
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
-  createTypes(`interface BlogPost @nodeInterface {
+  createTypes(`interface BlogPost implements Node {
       id: ID!
       title: String!
       body: String!
