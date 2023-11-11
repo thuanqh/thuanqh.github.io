@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import SnakeGame from "../components/SnakeGame.vue";
 ---
 
 <MainLayout>
@@ -10,35 +11,25 @@ import MainLayout from "../layouts/MainLayout.astro";
       <div class="head">
         <span>Hi all, I am</span>
         <h1>Jason Quach</h1>
-        <h2>Full Stack Software Craftsman</h2>
+        <h2>> Full Stack Software Craftsman</h2>
       </div>
       <div id="info">
-        <span class="action"> 
-					// complete the game to continue
-				</span>
-				<span>
-					// you can also see it on my Github page
-				</span>
-				<span>
-					// find my profile on Github:
-				</span>
+        <span class="action"> // complete the game to continue</span>
+        <span> // you can also see it on my Github page</span>
+        <span> // find my profile on Github:</span>
         <p class="code">
-          <span class="identifier">
-						const
-					</span>
-          <span class="variable-name">
-						githubLink
-					</span>
-          <span class="operator">
-						=
-					</span>
+          <span class="identifier"> const</span>
+          <span class="variable-name"> githubLink</span>
+          <span class="operator"> =</span>
           <a href="https://github.com/thuanqh" class="string">
             "https://github.com/thuanqh"
           </a>
         </p>
       </div>
     </section>
-    <section class="game">SnakeGame</section>
+    <section class="game">
+      <SnakeGame client:load />
+    </section>
   </main>
 </MainLayout>
 
