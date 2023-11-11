@@ -1,6 +1,7 @@
 ---
-import AppHeader from "../components/AppHeader.astro"
-import AppFooter from '../components/AppFooter.astro';
+import MobileMenu from "../components/MobileMenu.astro";
+import AppHeader from "../components/AppHeader.astro";
+import AppFooter from "../components/AppFooter.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
 ---
 
@@ -14,6 +15,7 @@ import GlobalStyles from "../components/GlobalStyles.astro";
   </head>
   <body>
     <div id="main">
+      <MobileMenu />
       <AppHeader />
       <slot />
       <AppFooter />
