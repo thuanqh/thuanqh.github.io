@@ -1,14 +1,14 @@
 ---
-
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header id="navbar" class="w-full hidden lg:flex flex-col">
   <nav class="w-full flex justify-between border-bot">
     <div class="flex">
-      <a href="/" id="nav-logo">jason-quach</a>
-      <a href="/" id="nav-link">_hello</a>
-      <a href="/about-me" id="nav-link">_about-me</a>
-      <a href="/projects" id="nav-link">_projects</a>
+      <HeaderLink href="/" id="nav-logo">jason-quach</HeaderLink>
+      <HeaderLink href="/" id="nav-link">_hello</HeaderLink>
+      <HeaderLink href="/about-me" id="nav-link">_about-me</HeaderLink>
+      <HeaderLink href="/projects" id="nav-link">_projects</HeaderLink>
     </div>
     <a href="/contact-me" id="nav-link-contact">_contact-me</a>
   </nav>
@@ -41,13 +41,13 @@
     color: white;
   }
 
-  #nav-link.router-link-active,
+  #nav-link.active,
   #nav-link-contact.router-link-active {
     border-bottom: 2px solid #fea55f;
     color: white;
   }
 
-  #nav-logo.router-link-active {
+  #nav-logo.active {
     border-right: 1px solid #1e2d3d;
     border-bottom: none;
     @apply text-menu-text;

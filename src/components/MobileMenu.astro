@@ -1,29 +1,29 @@
 ---
-
+import HeaderLink from './HeaderLink.astro';
 ---
 
 <div id="mobile-menu" class="w-full z-10 lg:hidden">
   <!-- header -->
   <div id="mobile-header" class="w-full h-16 flex justify-between items-center">
     <a
-      class="text-menu-text font-fira_retina flex h-full items-center mx-5"
+      class:list={["text-menu-text font-fira_retina flex h-full items-center mx-5"]}
       href="/"
     >
       jason-quach
     </a>
     <img src="/icons/burger.svg" class="w-5 h-5 mx-5 my-auto" />
-    <img src="/icons/burger-close.svg" class="w-5 h-5 mx-5 my-auto" />
+    <img src="/icons/burger-close.svg" class="w-5 h-5 mx-5 my-auto hidden" />
   </div>
 
   <!-- mobile menu -->
   <div id="menu" class="bg-mobile-menu-blue z-10 hidden">
-    <a id="nav-link-mobile" href="/"> _hello</a>
+    <HeaderLink id="nav-link-mobile" href="/">_hello</HeaderLink>
 
-    <a id="nav-link-mobile" href="/about-me"> _about-me</a>
+    <HeaderLink id="nav-link-mobile" href="/about-me">_about-me</HeaderLink>
 
-    <a id="nav-link-mobile" href="/projects"> _projects</a>
+    <HeaderLink id="nav-link-mobile" href="/projects">_projects</HeaderLink>
 
-    <a id="nav-link-mobile" href="/contact-me"> _contact-me</a>
+    <HeaderLink id="nav-link-mobile" href="/contact-me">_contact-me</HeaderLink>
   </div>
 </div>
 
