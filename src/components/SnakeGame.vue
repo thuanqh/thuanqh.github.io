@@ -1,61 +1,119 @@
 <template>
   <div id="console">
-
     <!-- bolts -->
-    <img id="corner" src="/icons/console/bolt-up-left.svg" alt="" class="absolute top-2 left-2 opacity-70">
-    <img id="corner" src="/icons/console/bolt-up-right.svg" alt="" class="absolute top-2 right-2 opacity-70">
-    <img id="corner" src="/icons/console/bolt-down-left.svg" alt="" class="absolute bottom-2 left-2 opacity-70">
-    <img id="corner" src="/icons/console/bolt-down-right.svg" alt="" class="absolute bottom-2 right-2 opacity-70">
-
+    <img
+      id="corner"
+      src="/icons/console/bolt-up-left.svg"
+      alt=""
+      class="absolute top-2 left-2 opacity-70"
+    />
+    <img
+      id="corner"
+      src="/icons/console/bolt-up-right.svg"
+      alt=""
+      class="absolute top-2 right-2 opacity-70"
+    />
+    <img
+      id="corner"
+      src="/icons/console/bolt-down-left.svg"
+      alt=""
+      class="absolute bottom-2 left-2 opacity-70"
+    />
+    <img
+      id="corner"
+      src="/icons/console/bolt-down-right.svg"
+      alt=""
+      class="absolute bottom-2 right-2 opacity-70"
+    />
 
     <!-- Game Screen -->
     <div id="game-screen" ref="gameScreen"></div>
 
-    <button id="start-button" class="font-fira_retina" @click="startGame">start-game</button>
+    <button id="start-button" class="font-fira_retina" @click="startGame">
+      start-game
+    </button>
 
     <!-- Game Over -->
     <div id="game-over" class="hidden">
-      <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">GAME OVER!</span>
+      <span
+        class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center"
+        >GAME OVER!</span
+      >
       <button
         class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white"
-        @click="startAgain">start-again</button>
+        @click="startAgain"
+      >
+        start-again
+      </button>
     </div>
 
     <div id="congrats" class="hidden">
-      <span class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center">WELL DONE!</span>
+      <span
+        class="font-fira_retina text-greenfy bg-bluefy-dark h-12 flex items-center justify-center"
+        >WELL DONE!</span
+      >
       <button
         class="font-fira_retina text-menu-text text-sm flex items-center justify-center w-full py-6 hover:text-white"
-        @click="startAgain">play-again</button>
+        @click="startAgain"
+      >
+        play-again
+      </button>
     </div>
 
-    <div id="console-menu" class="h-full flex flex-col items-end justify-between">
-
+    <div
+      id="console-menu"
+      class="h-full flex flex-col items-end justify-between"
+    >
       <div>
-
         <div id="instructions" class="font-fira_retina text-sm text-white">
           <p>// use your keyboard</p>
           <p>// arrows to play</p>
 
-          <div id="buttons" class="w-full flex flex-col items-center gap-1 pt-5">
-
+          <div
+            id="buttons"
+            class="w-full flex flex-col items-center gap-1 pt-5"
+          >
             <button id="console-button" class="button-up" @click="move('up')">
-              <img src="/icons/console/arrow-button.svg" alt="">
+              <img src="/icons/console/arrow-button.svg" alt="" />
             </button>
 
             <div class="grid grid-cols-3 gap-1">
-              <button id="console-button" class="button-left" @click="move('left')">
-                <img src="/icons/console/arrow-button.svg" alt="" class="-rotate-90">
+              <button
+                id="console-button"
+                class="button-left"
+                @click="move('left')"
+              >
+                <img
+                  src="/icons/console/arrow-button.svg"
+                  alt=""
+                  class="-rotate-90"
+                />
               </button>
 
-              <button id="console-button" class="button-down" @click="move('down')">
-                <img src="/icons/console/arrow-button.svg" alt="" class="rotate-180">
+              <button
+                id="console-button"
+                class="button-down"
+                @click="move('down')"
+              >
+                <img
+                  src="/icons/console/arrow-button.svg"
+                  alt=""
+                  class="rotate-180"
+                />
               </button>
 
-              <button id="console-button" class="button-right" @click="move('right')">
-                <img src="/icons/console/arrow-button.svg" alt="" class="rotate-90">
+              <button
+                id="console-button"
+                class="button-right"
+                @click="move('right')"
+              >
+                <img
+                  src="/icons/console/arrow-button.svg"
+                  alt=""
+                  class="rotate-90"
+                />
               </button>
             </div>
-
           </div>
         </div>
 
@@ -63,7 +121,10 @@
         <div id="score-board" class="w-full flex flex-col pl-5">
           <p class="font-fira_retina text-white pt-5">// food left</p>
 
-          <div id="score" class="grid grid-cols-5 gap-5 justify-items-center pt-5 w-fit">
+          <div
+            id="score"
+            class="grid grid-cols-5 gap-5 justify-items-center pt-5 w-fit"
+          >
             <div class="food"></div>
             <div class="food"></div>
             <div class="food"></div>
@@ -74,19 +135,21 @@
             <div class="food"></div>
             <div class="food"></div>
             <div class="food"></div>
-
           </div>
         </div>
       </div>
       <!-- skip -->
-      <a id="skip-btn" href="/about-me" class="font-fira_retina flex hover:bg-white/20">
+      <a
+        id="skip-btn"
+        href="/about-me"
+        class="font-fira_retina flex hover:bg-white/20"
+      >
         skip
       </a>
-
     </div>
   </div>
 </template>
-  
+
 <script>
 export default {
   data() {
@@ -121,7 +184,6 @@ export default {
   },
   methods: {
     startGame() {
-
       // hide start button
       document.getElementById("start-button").style.display = "none";
 
@@ -137,16 +199,15 @@ export default {
       document.getElementById("game-over").style.display = "none";
       document.getElementById("congrats").style.display = "none";
 
-
       // reiniciar datos del juego
       this.gameStarted = false;
       this.gameOver = false;
       this.restartScore();
       this.food = {
         x: 10,
-        y: 5
+        y: 5,
       };
-      this.snake = [
+      (this.snake = [
         { x: 10, y: 12 },
         { x: 10, y: 13 },
         { x: 10, y: 14 },
@@ -165,8 +226,8 @@ export default {
         { x: 15, y: 22 },
         { x: 15, y: 23 },
         { x: 15, y: 24 },
-      ],
-        this.direction = "up";
+      ]),
+        (this.direction = "up");
 
       // limpiar intervalo de juego
       clearInterval(this.gameInterval);
@@ -200,7 +261,7 @@ export default {
         newY >= 0 &&
         newY < 40 &&
         !this.snake.find(
-          snakeCell => snakeCell.x === newX && snakeCell.y === newY
+          (snakeCell) => snakeCell.x === newX && snakeCell.y === newY,
         )
       ) {
         /* snake move next cell */
@@ -208,7 +269,6 @@ export default {
 
         /* check snake next cell is food */
         if (newX === this.food.x && newY === this.food.y) {
-
           // add score
           this.score++;
 
@@ -218,24 +278,20 @@ export default {
 
           // check if score is 10 (max score)
           if (this.score === 10) {
-
             // move snake head to food (fix snake head position at end)
             this.snake.unshift({ x: newX, y: newY }); // move head
-            this.food = { x: null, y: null } // remove food
+            this.food = { x: null, y: null }; // remove food
             clearInterval(this.gameInterval); // stop game
-            document.getElementById('congrats').style.display = 'block' // show congrats
+            document.getElementById("congrats").style.display = "block"; // show congrats
             this.gameOver = true; // game over
             this.gameStarted = false; // stop game
-
           } else {
-
             // create new food
             this.food = {
               x: Math.floor(Math.random() * 24),
-              y: Math.floor(Math.random() * 40)
+              y: Math.floor(Math.random() * 40),
             };
           }
-
         } else {
           // if next cell is not food: snake pop last cell
           this.snake.pop();
@@ -243,7 +299,7 @@ export default {
       } else {
         // GAME OVER: if snake leave from game window or eat itself
         clearInterval(this.gameInterval);
-        document.getElementById('game-over').style.display = 'block'
+        document.getElementById("game-over").style.display = "block";
         this.gameStarted = false;
         this.gameOver = true;
       }
@@ -262,12 +318,11 @@ export default {
       for (let i = 0; i < 40; i++) {
         // exe x
         for (let j = 0; j < 24; j++) {
-
           /* cell style */
           let cell = document.createElement("div");
           cell.classList.add("cell");
-          cell.style.width = cellSize
-          cell.style.height = cellSize
+          cell.style.width = cellSize;
+          cell.style.height = cellSize;
           cell.style.display = "flex";
           cell.style.flexShrink = 0;
           cell.classList.add("black");
@@ -281,26 +336,24 @@ export default {
 
           /* Estilo de la serpiente a medida que va crediendo */
           let snakeCell = this.snake.find(
-            snakeCell => snakeCell.x === j && snakeCell.y === i
+            (snakeCell) => snakeCell.x === j && snakeCell.y === i,
           );
 
           if (snakeCell) {
             cell.style.backgroundColor = "#43D9AD";
-            cell.style.opacity = 1 - (this.snake.indexOf(snakeCell) / this.snake.length);
+            cell.style.opacity =
+              1 - this.snake.indexOf(snakeCell) / this.snake.length;
             cell.classList.add("green");
-
           }
 
           /* Estilo de la cabeza */
           if (snakeCell && this.snake.indexOf(snakeCell) === 0) {
-
             let headRadius = "5px";
             if (this.direction === "up") {
               cell.style.borderTopLeftRadius = headRadius;
               cell.style.borderTopRightRadius = headRadius;
             }
             if (this.direction === "down") {
-
               cell.style.borderBottomLeftRadius = headRadius;
               cell.style.borderBottomRightRadius = headRadius;
             }
@@ -316,7 +369,6 @@ export default {
           gameScreen.appendChild(cell);
         }
       }
-
     },
     restartScore() {
       this.score = 0;
@@ -348,10 +400,10 @@ export default {
           }
           break;
       }
-    }
+    },
   },
   mounted() {
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", (event) => {
       if (this.gameStarted) {
         switch (event.keyCode) {
           case 37:
@@ -398,9 +450,7 @@ export default {
     };
 
     this.render();
-
-
-  }
+  },
 };
 </script>
 
@@ -412,11 +462,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(35, 123, 109, 1), rgba(67, 217, 173, 0.13));
+  background: linear-gradient(
+    to bottom,
+    rgba(35, 123, 109, 1),
+    rgba(67, 217, 173, 0.13)
+  );
   border-radius: 10px;
   padding: 30px;
   position: relative;
-
 }
 
 #game-screen {
@@ -434,7 +487,7 @@ export default {
   padding-block: 8px;
   border-radius: 10px;
   border: 1px solid black;
-  background-color: #FEA55F;
+  background-color: #fea55f;
   color: black;
   cursor: pointer;
   position: absolute;
@@ -455,7 +508,7 @@ export default {
 }
 
 #console-button {
-  background-color: #010C15;
+  background-color: #010c15;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -466,7 +519,7 @@ export default {
 
 #console-button:hover {
   background-color: #010c15d8;
-  box-shadow: #43D9AD 0 0 10px;
+  box-shadow: #43d9ad 0 0 10px;
 }
 
 #instructions {
@@ -476,9 +529,9 @@ export default {
 }
 
 .food {
-  background-color: #43D9AD;
+  background-color: #43d9ad;
   border-radius: 50%;
-  box-shadow: 0 0 10px #43D9AD;
+  box-shadow: 0 0 10px #43d9ad;
   width: 8px;
   height: 8px;
   opacity: 0.3;
@@ -488,12 +541,12 @@ export default {
 #congrats {
   position: absolute;
   bottom: 12%;
-  color: #43D9AD;
+  color: #43d9ad;
   width: 240px;
 }
 
 #game-over,
-#congrats>span {
+#congrats > span {
   font-size: 1.5rem;
   /* 24px */
   line-height: 2rem;
@@ -515,7 +568,6 @@ export default {
   /* 8px */
 }
 
-
 @media (min-width: 1024px) and (max-width: 1536px) {
   #game-screen {
     width: 192px;
@@ -526,7 +578,6 @@ export default {
     width: 420px;
     height: 370px;
     padding: 24px;
-
   }
 
   #start-button {
@@ -568,12 +619,12 @@ export default {
   #congrats {
     position: absolute;
     bottom: 10%;
-    color: #43D9AD;
+    color: #43d9ad;
     width: 192px;
   }
 
   #game-over,
-  #congrats>span {
+  #congrats > span {
     font-size: 1.125rem;
     /* 18px */
     line-height: 1.75rem;
@@ -593,4 +644,5 @@ export default {
     border-radius: 0.5rem;
     /* 8px */
   }
-}</style>
+}
+</style>

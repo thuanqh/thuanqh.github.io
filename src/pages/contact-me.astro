@@ -1,0 +1,169 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactForm from '../components/ContactForm.vue';
+import FormContentCode from '../components/FormContentCode.vue';
+
+import personal from "../data/personal.json";
+
+const direct = personal.contacts.direct.sources
+const find_me_also_in = personal.contacts.find_me_also_in.sources
+
+const name = ""
+const email = ""
+const message = ""
+---
+
+<MainLayout>
+  <main id="contact-me" class="page">
+    <div id="mobile-page-title">
+      <h2>_contact-me</h2>
+    </div>
+
+    <div id="page-menu" class="w-full h-full flex flex-col border-right">
+      <!-- contacts -->
+      <div id="contacts" class="submenu">
+        <div class="title">
+          <img class="arrow" src="/icons/arrow.svg" />
+          <h3>contacts</h3>
+        </div>
+        <div id="links">
+          { 
+            Object.keys(direct).map((key) => ( 
+              <div class="link">
+                <img src=`/icons/${key}.svg` />
+                <a
+                  href="/"
+                  class="font-fira_retina text-menu-text hover:text-white"
+                >
+                  {direct[key as keyof typeof direct]}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- find me also in -->
+      <div id="find-me-in" class="submenu border-top">
+        <div class="title">
+          <img class="arrow" src="/icons/arrow.svg" />
+          <h3>find-me-also-in</h3>
+        </div>
+        <div id="links">
+          {
+            Object.keys(find_me_also_in).map(key => (            
+              <div class="link">
+                <img src="/icons/link.svg" />
+                <a
+                  href=`${find_me_also_in[key as keyof typeof find_me_also_in].url}${find_me_also_in[key as keyof typeof find_me_also_in].user}`
+                  class="font-fira_retina text-menu-text hover:text-white"
+                  target="_blank">
+                  {find_me_also_in[key as keyof typeof find_me_also_in].title}
+                </a>
+              </div>    
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col w-full">
+      <!-- windows tab -->
+      <div
+        class="tab-height w-full hidden lg:flex border-right border-bot items-center"
+      >
+        <div class="flex items-center border-right h-full">
+          <p class="font-fira_regular text-menu-text text-sm px-3">contacts</p>
+          <img src="/icons/close.svg" alt="" class="m-3" />
+        </div>
+      </div>
+
+      <!-- main -->
+      <div class="flex lg:grid lg:grid-cols-2 h-full w-full">
+        <div
+          id="left"
+          class="h-full w-full flex flex-col border-right items-center"
+        >
+          <ContactForm name={name} email={email} message={message} client:load />
+        </div>
+
+        <div id="right" class="h-full w-full hidden lg:flex">
+          <div class="form-content">
+            <FormContentCode name={name} email={email} message={message} client:load />
+          </div>
+          <!-- scroll bar -->
+          <div
+            id="scroll-bar"
+            class="h-full border-left flex justify-center py-1"
+          >
+            <div id="scroll"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</MainLayout>
+
+<style>
+  .arrow {
+    transition: 0.1s;
+    margin-right: 10px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .submenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submenu .title h3 {
+    @apply font-fira_regular;
+    color: white;
+    font-size: 16px;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    padding: 4px 25px;
+  }
+
+  .link img {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+
+  #links {
+    padding: 10px 0px;
+  }
+
+  .form-content {
+    padding: 75px 50px 0px 75px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    font-size: 15px;
+  }
+  @media (min-width: 1024px) {
+    .submenu .title {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #1e2d3d;
+      padding: 0px 25px;
+      height: 35px;
+      padding: 0px 25px;
+    }
+    .submenu .title:hover {
+      cursor: pointer;
+    }
+    .submenu .title h3 {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<script>
+  import '../scripts/contact-me.js';
+</script>
