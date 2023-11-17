@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SnakeGame from "../components/SnakeGame.vue";
+import personal from "../data/personal.json"
 ---
 
 <MainLayout>
@@ -10,17 +11,17 @@ import SnakeGame from "../components/SnakeGame.vue";
     <section class="hero">
       <div class="head">
         <span>Hi all, I am</span>
-        <h1>Jason Quach</h1>
-        <h2>> Full Stack Software Craftsman</h2>
+        <h1>{personal.name}</h1>
+        <h2>> {personal.role}</h2>
       </div>
       <div id="info">
         <span class="action">
 					// complete the game to continue
 				</span>
-        <span>
+        <span class="hidden lg:block">
 					// you can also see it on my Github page
 				</span>
-        <span>
+        <span class="hidden lg:block">
 					// find my profile on Github:
 				</span>
         <p class="code">
@@ -33,14 +34,14 @@ import SnakeGame from "../components/SnakeGame.vue";
           <span class="operator">
 						=
 					</span>
-          <a href="https://github.com/thuanqh" class="string">
-            "https://github.com/thuanqh"
+          <a href=`https://github.com/${personal.contacts.social.github.user}` class="string">
+            "https://github.com/{personal.contacts.social.github.user}"
           </a>
         </p>
       </div>
     </section>
     <section class="game">
-      <SnakeGame client:load />
+      <SnakeGame client:visible />
     </section>
   </main>
 </MainLayout>
