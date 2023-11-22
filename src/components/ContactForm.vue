@@ -1,36 +1,19 @@
 <template>
-  <form id="contact-form" class="text-sm">
+  <form id="contact-form" class="text-sm" @submit.prevent="onSubmit">
     <div class="flex flex-col">
       <label for="name" class="mb-3">_name:</label>
-      <input
-        type="text"
-        id="name-input"
-        name="name"
-        :placeholder="name"
-        class="p-2 mb-5 placeholder-slate-600"
-        required
-      />
+      <input type="text" v-model="contact.name" id="name-input" name="name" class="p-2 mb-5 placeholder-slate-600"
+        required />
     </div>
     <div class="flex flex-col">
       <label for="email" class="mb-3">_email:</label>
-      <input
-        type="email"
-        id="email-input"
-        name="email"
-        :placeholder="email"
-        class="p-2 mb-5 placeholder-slate-600"
-        required
-      />
+      <input type="email" v-model="contact.email" id="email-input" name="email" class="p-2 mb-5 placeholder-slate-600"
+        required />
     </div>
     <div class="flex flex-col">
       <label for="message" class="mb-3">_message:</label>
-      <textarea
-        id="message-input"
-        name="message"
-        :placeholder="message"
-        class="placeholder-slate-600"
-        required
-      ></textarea>
+      <textarea id="message-input" v-model="contact.message" name="message" class="placeholder-slate-600"
+        required></textarea>
     </div>
     <button id="submit-button" type="submit" class="py-2 px-4">
       submit-message
@@ -38,49 +21,28 @@
   </form>
 </template>
 
-<script>
-export default {
-  name: "ContactForm",
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      required: true,
-    },
-    message: {
-      type: String,
-      required: true,
-    },
-  },
-  mounted() {
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
-        const name = document.querySelector('input[name="name"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const message = document.querySelector(
-          'textarea[name="message"]',
-        ).value;
+<script setup>
+import { ref } from "vue"
+import { updateContact } from "../store/contacts"
 
-        // Here the code to send the email
-      });
-  },
-};
+const contact = ref({})
+
+function onSubmit() {
+  updateContact(contact.value)
+}
 </script>
 
 <style>
 form {
   @apply font-fira_retina text-menu-text;
 }
+
 input {
   background-color: #011221;
   border: 2px solid #1e2d3d;
   border-radius: 7px;
 }
+
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -135,14 +97,17 @@ input:focus,
     max-width: 320px;
     max-height: 400px;
   }
+
   #submit-button {
     /* width: 100%; */
     font-size: 12px;
   }
+
   textarea {
     font-size: 13px;
     max-height: 130px !important;
   }
+
   input {
     font-size: 13px;
   }

@@ -31,7 +31,7 @@
         :
         <span class="text-codeline-link">"</span>
         <span id="name-value" class="text-codeline-link">
-          {{ name }}
+          {{ contact.name }}
         </span>
         <span class="text-codeline-link">"</span>
         , <br />
@@ -40,7 +40,7 @@
         :
         <span class="text-codeline-link">"</span>
         <span id="email-value" class="text-codeline-link">
-          {{ email }}
+          {{ contact.email }}
         </span>
         <span class="text-codeline-link">"</span>
         , <br />
@@ -49,7 +49,7 @@
         :
         <span class="text-codeline-link">"</span>
         <span id="message-value" class="text-codeline-link">
-          {{ message }}
+          {{ contact.message }}
         </span>
         <span class="text-codeline-link">"</span>
         , <br />
@@ -74,51 +74,44 @@
           &nbsp;&nbsp;form.send
           <span class="text-menu-text">(</span>
           message
-          <span class="text-menu-text"
-            >); <br />
-            })</span
-          >
+          <span class="text-menu-text">); <br />
+            })</span>
         </span>
       </p>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      date: new Date().toDateString(),
-      lines: 0,
-    };
-  },
-  props: {
-    name: String,
-    email: String,
-    message: String,
-  },
-  mounted() {
-    this.updateLines();
-    window.addEventListener("resize", this.updateLines);
-    window.addEventListener("input", this.updateLines);
-    window.addEventListener("click", this.updateLines);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateLines);
-    window.removeEventListener("click", this.updateLines);
-    window.addEventListener("input", this.updateLines);
-  },
-  methods: {
-    updateLines() {
-      const textContainer = this.$el.querySelector(".text-container");
-      const style = window.getComputedStyle(textContainer);
-      const fontSize = parseInt(style.fontSize);
-      const lineHeight = parseInt(style.lineHeight);
-      const maxHeight = textContainer.offsetHeight;
-      this.lines = Math.ceil(maxHeight / lineHeight);
-    },
-  },
-};
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useStore } from "@nanostores/vue"
+import { $contact } from "../store/contacts"
+
+const date = ref(new Date().toDateString())
+const lines = ref(0)
+const contact = useStore($contact)
+
+function updateLines() {
+  const textContainer = document.querySelector(".text-container");
+  const style = window.getComputedStyle(textContainer);
+  const fontSize = parseInt(style.fontSize);
+  const lineHeight = parseInt(style.lineHeight);
+  const maxHeight = textContainer.offsetHeight;
+  lines.value = Math.ceil(maxHeight / lineHeight);
+}
+
+onMounted(() => {
+  updateLines();
+  window.addEventListener("resize", updateLines);
+  window.addEventListener("input", updateLines);
+  window.addEventListener("click", updateLines);
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateLines);
+  window.removeEventListener("click", updateLines);
+  window.addEventListener("input", updateLines);
+})
 </script>
 
 <style>
