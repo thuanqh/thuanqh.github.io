@@ -2,17 +2,17 @@
   <form id="contact-form" class="text-sm" @submit.prevent="onSubmit">
     <div class="flex flex-col">
       <label for="name" class="mb-3">_name:</label>
-      <input type="text" v-model="newContact.name" id="name-input" class="p-2 mb-5 placeholder-slate-600"
+      <input type="text" v-model="contact.name" id="name-input" name="name" class="p-2 mb-5 placeholder-slate-600"
         required />
     </div>
     <div class="flex flex-col">
       <label for="email" class="mb-3">_email:</label>
-      <input type="email" v-model="newContact.email" id="email-input" class="p-2 mb-5 placeholder-slate-600"
+      <input type="email" v-model="contact.email" id="email-input" name="email" class="p-2 mb-5 placeholder-slate-600"
         required />
     </div>
     <div class="flex flex-col">
       <label for="message" class="mb-3">_message:</label>
-      <textarea id="message-input" v-model="newContact.message" class="placeholder-slate-600"
+      <textarea id="message-input" v-model="contact.message" name="message" class="placeholder-slate-600"
         required></textarea>
     </div>
     <button id="submit-button" type="submit" class="py-2 px-4">
@@ -25,10 +25,10 @@
 import { ref } from "vue"
 import { updateContact } from "../store/contacts"
 
-const newContact = ref({})
+const contact = ref({})
 
 function onSubmit() {
-  updateContact(newContact.value)
+  updateContact(contact.value)
 }
 </script>
 
