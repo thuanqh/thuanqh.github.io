@@ -1,43 +1,44 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import HeaderLink from './HeaderLink.astro'
 ---
 
-<div id="mobile-menu" class="w-full z-10 lg:hidden">
-  <!-- header -->
-  <div id="mobile-header" class="w-full h-16 flex justify-between items-center">
-    <a
-      class:list={["text-menu-text font-fira_retina flex h-full items-center mx-5"]}
-      href="/"
-    >
-      jason-quach
-    </a>
-    <img src="/icons/burger.svg" class="w-5 h-5 mx-5 my-auto" />
-    <img src="/icons/burger-close.svg" class="w-5 h-5 mx-5 my-auto hidden" />
-  </div>
+<div id="mobile-menu" class="z-10 w-full lg:hidden">
+	<!-- header -->
+	<div id="mobile-header" class="flex h-16 w-full items-center justify-between">
+		<a class:list={['mx-5 flex h-full items-center font-fira_retina text-menu-text']} href="/">
+			jason-quach
+		</a>
+		<img id="burger-close" src="/icons/burger-close.svg" class="mx-5 my-auto hidden h-5 w-5" />
+		<img id="burger" src="/icons/burger.svg" class="mx-5 my-auto h-5 w-5" />
+	</div>
 
-  <!-- mobile menu -->
-  <div id="menu" class="bg-mobile-menu-blue z-10 hidden">
-    <HeaderLink id="nav-link-mobile" href="/">_hello</HeaderLink>
+	<!-- mobile menu -->
+	<div id="menu" class="z-10 hidden bg-mobile-menu-blue">
+		<HeaderLink id="nav-link-mobile" href="/">_hello</HeaderLink>
 
-    <!-- <HeaderLink id="nav-link-mobile" href="/about-me">_about-me</HeaderLink> -->
+		<!-- <HeaderLink id="nav-link-mobile" href="/about-me">_about-me</HeaderLink> -->
 
-    <!-- <HeaderLink id="nav-link-mobile" href="/projects">_projects</HeaderLink> -->
+		<!-- <HeaderLink id="nav-link-mobile" href="/projects">_projects</HeaderLink> -->
 
-    <HeaderLink id="nav-link-mobile" href="/contact-me">_contact-me</HeaderLink>
-  </div>
+		<HeaderLink id="nav-link-mobile" href="/contact-me">_contact-me</HeaderLink>
+	</div>
 </div>
 
 <style>
-  #mobile-header {
-    border-bottom: 1px solid #1e2d3d;
-  }
+	#mobile-header {
+		border-bottom: 1px solid #1e2d3d;
+	}
 
-  #nav-link-mobile {
-    border-bottom: 1px solid #1e2d3d;
-    @apply text-menu-text font-fira_retina px-6 py-4 flex items-center;
-  }
+	#nav-link-mobile {
+		border-bottom: 1px solid #1e2d3d;
+		@apply flex items-center px-6 py-4 font-fira_retina text-menu-text;
+	}
 
-  #nav-link-mobile.active {
-    color: white;
-  }
+	#nav-link-mobile.active {
+		color: white;
+	}
 </style>
+
+<script>
+	import '../scripts/mobile-menu'
+</script>

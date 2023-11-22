@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
 import ContactForm from '../components/ContactForm.vue';
 import FormContentCode from '../components/FormContentCode.vue';
 
@@ -7,10 +8,6 @@ import personal from "../data/personal.json";
 
 const direct = personal.contacts.direct.sources
 const find_me_also_in = personal.contacts.find_me_also_in.sources
-
-const name = ""
-const email = ""
-const message = ""
 ---
 
 <MainLayout>
@@ -23,10 +20,10 @@ const message = ""
       <!-- contacts -->
       <div id="contacts" class="submenu">
         <div class="title">
-          <img class="arrow" src="/icons/arrow.svg" />
+          <img class="arrow lg:rotate-90" src="/icons/arrow.svg" />
           <h3>contacts</h3>
         </div>
-        <div id="links">
+        <div id="links" class="hidden lg:block">
           { 
             Object.keys(direct).map((key) => ( 
               <div class="link">
@@ -46,10 +43,10 @@ const message = ""
       <!-- find me also in -->
       <div id="find-me-in" class="submenu border-top">
         <div class="title">
-          <img class="arrow" src="/icons/arrow.svg" />
+          <img class="arrow lg:rotate-90" src="/icons/arrow.svg" />
           <h3>find-me-also-in</h3>
         </div>
-        <div id="links">
+        <div id="links" class="hidden lg:block">
           {
             Object.keys(find_me_also_in).map(key => (            
               <div class="link">
@@ -84,12 +81,12 @@ const message = ""
           id="left"
           class="h-full w-full flex flex-col border-right items-center"
         >
-          <ContactForm name={name} email={email} message={message} client:load />
+          <ContactForm client:load />
         </div>
 
         <div id="right" class="h-full w-full hidden lg:flex">
           <div class="form-content">
-            <FormContentCode name={name} email={email} message={message} client:load />
+            <FormContentCode client:load />
           </div>
           <!-- scroll bar -->
           <div

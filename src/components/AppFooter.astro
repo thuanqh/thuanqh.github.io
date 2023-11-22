@@ -1,5 +1,5 @@
 ---
-
+import personal from '../data/personal.json';
 ---
 <footer class="flex md:justify-between border-top text-menu-text font-fira_retina">
   <div class="w-full flex justify-between md:justify-start">
@@ -7,15 +7,15 @@
       find me in:
     </span>
     <div class="flex" id="social-icons">
-      <a href="#" target="_blank" class="flex justify-center items-center">
+      <a href={`${personal.contacts.social.twitter.url}${personal.contacts.social.twitter.user}`} target="_blank" class="flex justify-center items-center">
         <img src="/icons/social/twitter.svg" />
       </a>
-      <a href="#" target="_blank" class="flex justify-center items-center">
+      <a href={`${personal.contacts.social.github.url}${personal.contacts.social.github.user}`} target="_blank" class="flex justify-center items-center">
         <img src="/icons/social/github.svg" />
       </a>
     </div>
   </div>
-  <a href="#" target="_blank" class="hidden md:flex items-center px-5 border-left">
+  <a href={`${personal.contacts.social.github.url}${personal.contacts.social.github.user}`} target="_blank" class="hidden md:flex items-center px-5 border-left">
     @thuanqh
     <img src="/icons/social/github.svg" />
   </a>
