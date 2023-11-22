@@ -10,7 +10,7 @@ import HeaderLink from "./HeaderLink.astro";
       <!-- <HeaderLink href="/about-me" id="nav-link">_about-me</HeaderLink> -->
       <!-- <HeaderLink href="/projects" id="nav-link">_projects</HeaderLink> -->
     </div>
-    <a href="/contact-me" id="nav-link-contact">_contact-me</a>
+    <HeaderLink href="/contact-me" id="nav-link-contact">_contact-me</HeaderLink>
   </nav>
 </header>
 
@@ -42,7 +42,7 @@ import HeaderLink from "./HeaderLink.astro";
   }
 
   #nav-link.active,
-  #nav-link-contact.router-link-active {
+  #nav-link-contact.active {
     border-bottom: 2px solid #fea55f;
     color: white;
   }

@@ -3,6 +3,10 @@ import MobileMenu from "../components/MobileMenu.astro";
 import AppHeader from "../components/AppHeader.astro";
 import AppFooter from "../components/AppFooter.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
+
+import personal from "../data/personal.json"
+
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -11,7 +15,8 @@ import GlobalStyles from "../components/GlobalStyles.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{personal.name} | {personal.role}</title>
+    <ViewTransitions />
   </head>
   <body>
     <div id="main">
