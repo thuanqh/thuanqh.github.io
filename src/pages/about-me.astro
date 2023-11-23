@@ -1,0 +1,177 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import personal from '../data/personal.json';
+
+const sections = personal.about.sections
+const direct = personal.contacts.direct
+
+---
+
+<MainLayout>
+	<main id="about-me" class="page">
+		
+		<div id="mobile-page-title">
+      <h2>_about-me</h2>
+    </div>
+
+		<div id="page-menu" class="w-full flex">
+
+			<!-- DESKTOP section icons -->
+      <div id="sections">
+				{
+					Object.values(sections).map((value) => (
+						<div id="section-icon">
+          		<img 
+								id=`section-icon-${value.title}` 
+								src=`${value.icon}` 
+								alt=`${value.title}`
+							/>
+        		</div>
+					))
+				}
+      </div>
+
+			<!-- focused section content -->
+      <div id="section-content" class="hidden lg:block w-full h-full border-right">
+
+        <!-- title -->
+        <div id="section-content-title" class="hidden lg:flex items-center min-w-full">
+          <img id="section-arrow-menu" src="/icons/arrow.svg" alt="" class="section-arrow mx-3 open">
+          <p class="font-fira_regular text-white text-sm">
+						{sections['personal-info'].title}
+					</p>
+        </div>
+
+        <!-- folders -->
+        <!-- <div>
+          <div v-for="(folder, key, index) in config.dev.about.sections[currentSection].info" :key="key" class="grid grid-cols-2 items-center my-2 font-fira_regular text-menu-text" @click="focusCurrentFolder(folder)">
+            <div class="flex col-span-2 hover:text-white hover:cursor-pointer">
+              <img id="diple" src="/icons/diple.svg" alt="" :class="{ open: isOpen(folder.title)}">
+              <img :src="'/icons/folder' + (index+1) + '.svg'" alt="" class="mr-3">
+              <p :id="folder.title" v-html="key" :class="{ active: isActive(folder.title)}"></p>
+            </div>
+            <div v-if="folder.files !== undefined" class="col-span-2">
+              <div v-for="(file, key) in folder.files" :key="key" class="hover:text-white hover:cursor-pointer flex my-2">
+                <img src="/icons/markdown.svg" alt="" class="ml-8 mr-3"/>
+                <p >{{ key }}</p>
+              </div> 
+            </div>
+          </div>
+        </div> -->
+
+        <!-- contact -->
+        <div id="section-content-title-contact" class="flex items-center min-w-full border-top">
+          <img id="section-arrow-menu" src="/icons/arrow.svg" alt="" class="section-arrow mx-3 open">
+          <p class="font-fira_regular text-white text-sm">
+						{direct.title}
+					</p>
+        </div>
+        <div id="contact-sources" class="hidden lg:flex lg:flex-col my-2">
+					{
+						Object.entries(direct.sources).map(([key, value]) => (
+							<div class="flex items-center mb-2">
+            		<img src=`/icons/${key}.svg` alt="" class="mx-4">
+            		<a href="/" class="font-fira_retina text-menu-text hover:text-white">{value}</a>
+          		</div>
+						))
+					}
+        </div>
+
+      </div>
+
+		</div>
+	</main>
+</MainLayout>
+
+<style>
+
+	#sections {
+		width: 5rem; /* 80px */
+		height: 100%;
+		display: none;
+		border-right: 1px solid #1E2D3D;
+	}
+	
+	/* LG */
+	@media (min-width: 1024px) {
+		#sections {
+			display: block;
+		}
+	}
+	
+	#section-icon {
+		@apply my-6 hover:cursor-pointer flex justify-center;
+		opacity: 0.4;
+	}
+	
+	#section-icon.active {
+		opacity: 1;
+	}
+	
+	#section-icon:hover {
+		opacity: 1;
+	}
+	
+	.tab-height {
+		min-height: 35px;
+		max-height: 35px;
+	}
+	
+	#tab-mobile {
+		padding: 25px 20px 0px 25px;
+		align-items: flex-end;
+	}
+	
+	#scroll-bar{
+		width: 20px;
+	}
+	
+	#scroll {
+		width: 14px;
+		height: 7px;
+		background-color: #607B96;
+	}
+	
+	#diple {
+		@apply mx-3 w-2 max-w-fit;
+	}
+	
+	.open {
+		transform: rotate(90deg);
+	}
+	
+	.active {
+		color:white;
+	}
+	
+	#right, #left {
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	#gists-content {
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	@media (max-width: 1024px) {
+		#gists-content {
+			height: 100%;
+			padding: 0px 25px;
+			overflow: hidden;
+		}
+	
+		#about {
+		min-height: stretch;
+	}
+	}
+	
+	.section-arrow {
+		transition: 0.1s;
+	}
+	
+	#section-content #contacts {
+		padding: 0px 25px;
+	}
+	
+	</style>

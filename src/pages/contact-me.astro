@@ -25,14 +25,14 @@ const find_me_also_in = personal.contacts.find_me_also_in.sources
         </div>
         <div id="links" class="hidden lg:block">
           { 
-            Object.keys(direct).map((key) => ( 
+            Object.entries(direct).map(([key, value]) => ( 
               <div class="link">
                 <img src=`/icons/${key}.svg` />
                 <a
                   href="/"
                   class="font-fira_retina text-menu-text hover:text-white"
                 >
-                  {direct[key as keyof typeof direct]}
+                  {value}
                 </a>
               </div>
             ))
@@ -48,14 +48,14 @@ const find_me_also_in = personal.contacts.find_me_also_in.sources
         </div>
         <div id="links" class="hidden lg:block">
           {
-            Object.keys(find_me_also_in).map(key => (            
+            Object.values(find_me_also_in).map((value) => (            
               <div class="link">
                 <img src="/icons/link.svg" />
                 <a
-                  href=`${find_me_also_in[key as keyof typeof find_me_also_in].url}${find_me_also_in[key as keyof typeof find_me_also_in].user}`
+                  href=`${value.url}${value.user}`
                   class="font-fira_retina text-menu-text hover:text-white"
                   target="_blank">
-                  {find_me_also_in[key as keyof typeof find_me_also_in].title}
+                  {value.title}
                 </a>
               </div>    
             ))
